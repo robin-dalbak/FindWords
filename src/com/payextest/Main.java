@@ -74,11 +74,12 @@ public class Main {
         // Denne setter opp griden slik at metoden ovenfor kan søke gjennom.
         public static ArrayList<String> transpose(ArrayList<String> grid) {
             ArrayList<String> transposed = new ArrayList<>();
-            for (int i = 0; i < grid.size(); i++) {
+            for (int row = 0; row < grid.size(); row++) {
                 StringBuilder verticalWordBuilder = new StringBuilder();
-                    for (int j = 0; j < grid.size(); j++) {
-                        verticalWordBuilder.append(grid.get(j).charAt(i));
-                    }
+                for (int col = 0; col < grid.size(); col++) {
+                    verticalWordBuilder.append(grid.get(col).charAt(row));
+
+                }
                 transposed.add(verticalWordBuilder.toString());
             }
             return transposed;
@@ -87,11 +88,10 @@ public class Main {
 
         public static ArrayList<String> transposeOpposite(ArrayList<String> oppositeGrid) {
             ArrayList<String> transposedOpposite = new ArrayList<>();
-            for (int k = oppositeGrid.size() - 1; k >= 0; k--) {
+            for (int oRow = oppositeGrid.size() - 1; oRow >= 0; oRow--) {
                 StringBuilder verticalWordBuilder = new StringBuilder();
-                for (int m = oppositeGrid.size() - 1; m >= 0; m--) {
-                    verticalWordBuilder.append(oppositeGrid.get(m).charAt(k));
-
+                for (int oCol = oppositeGrid.size() - 1; oCol >= 0; oCol--) {
+                    verticalWordBuilder.append(oppositeGrid.get(oCol).charAt(oRow));
 
                 }
 
